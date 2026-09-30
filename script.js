@@ -43,98 +43,98 @@ const SCHEDULE = [
 
   {
     aTime: "09:30:00",
-    bTime: "10:30:00",
+    bTime: "09:25:00",
     memo: "1時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
 {
     aTime: "09:35:00",
-    bTime: "08:45:00",
+    bTime: "09:30:00",
     memo: "2時間目開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "10:20:00",
-    bTime: "10:30:00",
+    bTime: "10:10:00",
     memo: "2時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "10:40:00",
-    bTime: "08:45:00",
+    bTime: "10:30:00",
     memo: "3時間目開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "11:25:00",
-    bTime: "10:30:00",
+    bTime: "11:10:00",
     memo: "3時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "11:30:00",
-    bTime: "08:45:00",
+    bTime: "11:15:00",
     memo: "4時間目開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "12:15:00",
-    bTime: "10:30:00",
+    bTime: "11:55:00",
     memo: "4時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "13:00:00",
-    bTime: "08:45:00",
-    memo: "給食終了",
+    bTime: "12:40:00",
+    memo: "掃除開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "13:20:00",
-    bTime: "10:30:00",
-    memo: "昼休み開始",
+    bTime: "12:50:00",
+    memo: "掃除終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "13:40:00",
-    bTime: "08:45:00",
+    bTime: "13:00:00",
     memo: "5時間目開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "14:25:00",
-    bTime: "10:30:00",
+    bTime: "13:40:00",
     memo: "5時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "14:30:00",
-    bTime: "08:45:00",
+    bTime: "13:45:00",
     memo: "6時間目開始",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "15:15:00",
-    bTime: "10:30:00",
+    bTime: "14:25:00",
     memo: "6時間目終了",
     audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "16:55:00",
-    bTime: "10:30:00",
+    bTime: "16:55:00",
     memo: "終業時刻",
     audio: "./audio/chime01.mp3"
   },
