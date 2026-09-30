@@ -2,6 +2,7 @@
 <html lang="ja">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -11,34 +12,64 @@
 
   <meta
     name="theme-color"
-    content="#ffffff"
+    content="#f5f6f7"
   >
 
   <title>ふくむろ時計</title>
 
+
+  <!-- =====================================
+       Google Fonts
+       教科書体に近い明朝系
+  ====================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+
   <link
     rel="stylesheet"
-    href="./style.css"
+    href="style.css"
   >
+
 </head>
 
 
 <body>
 
+
+  <!-- =====================================
+       アプリ全体
+  ====================================== -->
+
   <main class="app">
 
-    <!-- =========================
+
+    <!-- ===================================
          左上：タイトル
-    ========================== -->
+    ==================================== -->
 
-    <header class="app-title">
+    <div class="app-title">
       ふくむろ時計
-    </header>
+    </div>
 
 
-    <!-- =========================
-         上部：デジタル時計
-    ========================== -->
+    <!-- ===================================
+         上中央：デジタル時計
+    ==================================== -->
 
     <div
       id="digitalClock"
@@ -48,9 +79,9 @@
     </div>
 
 
-    <!-- =========================
-         右上：A/B切り替え
-    ========================== -->
+    <!-- ===================================
+         右上：A / B 切り替え
+    ==================================== -->
 
     <div class="mode-switch">
 
@@ -73,19 +104,19 @@
     </div>
 
 
-    <!-- =========================
+    <!-- ===================================
          中央：アナログ時計
-    ========================== -->
+    ==================================== -->
 
-    <section class="clock-wrapper">
+    <div class="clock-wrapper">
 
       <div
-        id="clock"
+        id="analogClock"
         class="clock"
-        aria-label="アナログ時計"
       >
 
         <!-- 目盛り -->
+
         <div
           id="clockTicks"
           class="clock-ticks"
@@ -93,6 +124,7 @@
 
 
         <!-- 数字 -->
+
         <div
           id="clockNumbers"
           class="clock-numbers"
@@ -100,6 +132,7 @@
 
 
         <!-- 時針 -->
+
         <div
           id="hourHand"
           class="clock-hand hour-hand"
@@ -107,6 +140,7 @@
 
 
         <!-- 分針 -->
+
         <div
           id="minuteHand"
           class="clock-hand minute-hand"
@@ -114,6 +148,7 @@
 
 
         <!-- 秒針 -->
+
         <div
           id="secondHand"
           class="clock-hand second-hand"
@@ -121,58 +156,64 @@
 
 
         <!-- 中央 -->
+
         <div class="clock-center"></div>
 
       </div>
 
-    </section>
-
-
-    <!-- =========================
-         現在のモード
-    ========================== -->
-
-    <div
-      id="currentMode"
-      class="current-mode"
-    >
-      Aタイム
     </div>
 
 
-    <!-- =========================
-         次の時報
-    ========================== -->
+    <!-- ===================================
+         左下情報
+    ==================================== -->
 
-    <div
-      id="nextEvent"
-      class="next-event"
-    >
-      次の時報：--
+    <div class="bottom-left-info">
+
+
+      <!-- 現在のタイム -->
+
+      <div
+        id="currentMode"
+        class="current-mode"
+      >
+        Aタイム
+      </div>
+
+
+      <!-- 次のチャイム -->
+
+      <div
+        id="nextEvent"
+        class="next-event"
+      >
+        次のチャイム：--
+      </div>
+
+
+      <!-- ステータス -->
+
+      <div
+        id="status"
+        class="status"
+      >
+        準備中...
+      </div>
+
+
     </div>
 
 
-    <!-- =========================
-         ステータス
-    ========================== -->
-
-    <div
-      id="status"
-      class="status"
-    >
-      準備中...
-    </div>
-
-
-    <!-- =========================
-         右下：設定
-    ========================== -->
+    <!-- ===================================
+         右下：設定ボタン
+    ==================================== -->
 
     <button
       id="settingsButton"
       class="settings-button"
       type="button"
       aria-label="設定"
+      title="設定"
     >
       ⚙
     </button>
@@ -181,28 +222,31 @@
   </main>
 
 
-  <!-- ==================================
+  <!-- =====================================
        設定モーダル
-  =================================== -->
+  ====================================== -->
 
   <div
     id="settingsModal"
     class="modal"
-    aria-hidden="true"
   >
 
     <div class="modal-panel">
 
+
+      <!-- ヘッダー -->
+
       <div class="modal-header">
 
         <h2>
-          設定
+          時報設定
         </h2>
 
         <button
           id="closeSettings"
           class="close-button"
           type="button"
+          aria-label="閉じる"
         >
           ×
         </button>
@@ -210,7 +254,9 @@
       </div>
 
 
-      <!-- 音声テスト -->
+      <!-- =================================
+           MP3テスト
+      ================================== -->
 
       <section class="settings-section">
 
@@ -219,26 +265,29 @@
         </h3>
 
         <p class="settings-description">
-          ブラウザの音声再生を確認できます。
+          ブラウザの自動再生制限を解除するため、
+          最初に下のボタンでMP3を試聴してください。
         </p>
 
         <button
-          id="testAudioButton"
+          id="testSoundButton"
           class="primary-button"
           type="button"
         >
-          ▶ MP3を試聴
+          MP3を試聴
         </button>
 
       </section>
 
 
-      <!-- 時刻表 -->
+      <!-- =================================
+           Aタイム
+      ================================== -->
 
       <section class="settings-section">
 
         <h3>
-          時刻表
+          Aタイム
         </h3>
 
         <div class="table-wrapper">
@@ -248,17 +297,16 @@
             <thead>
 
               <tr>
-                <th>Aタイム</th>
-                <th>Bタイム</th>
+                <th>時刻</th>
                 <th>メモ</th>
                 <th>MP3</th>
               </tr>
 
             </thead>
 
-            <tbody
-              id="scheduleTable"
-            ></tbody>
+            <tbody id="aTimeTable">
+
+            </tbody>
 
           </table>
 
@@ -267,40 +315,47 @@
       </section>
 
 
-      <!-- 操作説明 -->
+      <!-- =================================
+           Bタイム
+      ================================== -->
 
       <section class="settings-section">
 
         <h3>
-          操作
+          Bタイム
         </h3>
 
-        <p class="settings-description">
-          AタイムまたはBタイムを選択すると、
-          選択した時刻表に従ってMP3を再生します。
-        </p>
+        <div class="table-wrapper">
 
-        <p class="settings-description">
-          初回アクセス時は、ブラウザによって
-          音声再生の許可が必要になる場合があります。
-        </p>
+          <table>
+
+            <thead>
+
+              <tr>
+                <th>時刻</th>
+                <th>メモ</th>
+                <th>MP3</th>
+              </tr>
+
+            </thead>
+
+            <tbody id="bTimeTable">
+
+            </tbody>
+
+          </table>
+
+        </div>
 
       </section>
+
 
     </div>
 
   </div>
 
 
-  <!-- 音声 -->
-
-  <audio
-    id="audioPlayer"
-    preload="auto"
-  ></audio>
-
-
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 
 </body>
 
