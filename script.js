@@ -28,7 +28,7 @@
 const SCHEDULE = [
 
   {
-    aTime: "08:00:00",
+    aTime: "15:16:00",
     bTime: "08:30:00",
     memo: "始業",
     audio: "./audio/chime01.mp3"
