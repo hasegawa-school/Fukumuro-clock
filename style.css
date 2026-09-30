@@ -1,12 +1,11 @@
 /* =========================================
    ふくむろ時計
-   GitHub Pages版
    style.css
 ========================================= */
 
 
 /* =========================================
-   基本設定
+   基本
 ========================================= */
 
 * {
@@ -27,21 +26,21 @@ body {
 body {
   overflow: hidden;
 
+  background: #f5f6f7;
+
+  color: #252a2f;
+
   font-family:
     "Yu Gothic",
     "YuGothic",
     "Hiragino Kaku Gothic ProN",
     "Meiryo",
     sans-serif;
-
-  color: #252a2f;
-
-  background: #f5f6f7;
 }
 
 
 /* =========================================
-   アプリ全体
+   アプリ
 ========================================= */
 
 .app {
@@ -64,7 +63,7 @@ body {
 
 
 /* =========================================
-   左上：タイトル
+   タイトル
 ========================================= */
 
 .app-title {
@@ -75,29 +74,30 @@ body {
 
   z-index: 20;
 
+  color: #22272c;
+
   font-size: 28px;
 
   font-weight: 700;
 
   letter-spacing: .08em;
 
-  color: #22272c;
-
   white-space: nowrap;
 }
 
 
 /* =========================================
-   上部中央：デジタル時計
+   デジタル時計
 ========================================= */
 
 .digital-clock {
   position: absolute;
 
-  top: 32px;
+  top: 30px;
   left: 50%;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   z-index: 15;
 
@@ -124,7 +124,7 @@ body {
 
 
 /* =========================================
-   右上：A / B切り替え
+   A / B 切り替え
 ========================================= */
 
 .mode-switch {
@@ -198,7 +198,7 @@ body {
 
 
 /* =========================================
-   中央：アナログ時計エリア
+   時計本体
 ========================================= */
 
 .clock-wrapper {
@@ -229,10 +229,6 @@ body {
 }
 
 
-/* =========================================
-   アナログ時計本体
-========================================= */
-
 .clock {
   position: relative;
 
@@ -256,7 +252,7 @@ body {
 
 
 /* =========================================
-   時計の目盛り
+   目盛り
 ========================================= */
 
 .clock-ticks {
@@ -271,7 +267,12 @@ body {
 .clock-tick {
   position: absolute;
 
+  left: 50%;
+  top: 50%;
+
   width: 2px;
+
+  height: 8px;
 
   background: #a8afb5;
 
@@ -285,12 +286,15 @@ body {
 .clock-tick.major {
   width: 3px;
 
+  height: 14px;
+
   background: #3f464c;
 }
 
 
 /* =========================================
    時計の数字
+   教科書体に近い明朝系
 ========================================= */
 
 .clock-numbers {
@@ -316,32 +320,55 @@ body {
   transform:
     translate(-50%, -50%);
 
+
   /*
-   * ゴシック体
-   */
+     教科書体に近い明朝系。
+
+     Noto Serif JPを最優先にして、
+     端末側に存在する日本語明朝体を
+     フォールバックとして使用。
+  */
+
   font-family:
-    "Yu Gothic",
-    "YuGothic",
-    "Hiragino Kaku Gothic ProN",
-    "Meiryo",
-    sans-serif;
+    "Noto Serif JP",
+    "BIZ UDP明朝",
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    "Hiragino Mincho Pro",
+    "MS PMincho",
+    serif;
+
 
   font-size:
     clamp(18px, 2.6vw, 29px);
 
-  font-weight: 600;
+  font-weight: 500;
+
+  font-style: normal;
 
   color: #30363b;
 
   line-height: 1;
 
+  letter-spacing: 0;
+
+  font-variant:
+    normal;
+
   font-variant-numeric:
-    tabular-nums;
+    normal;
+
+  font-feature-settings:
+    normal;
+
+  font-synthesis:
+    none;
 }
 
 
 /* =========================================
-   時計の針 共通
+   針 共通
 ========================================= */
 
 .clock-hand {
@@ -408,7 +435,7 @@ body {
 
 
 /* =========================================
-   時計中央
+   中央
 ========================================= */
 
 .clock-center {
@@ -439,75 +466,79 @@ body {
 
 
 /* =========================================
-   左下エリア
-   Aタイム
+   左下情報
 ========================================= */
 
-/* =========================================
-   左下：Aタイム
-========================================= */
-
-.current-mode {
-  position: fixed;
-
-  left: 30px;
-  bottom: 80px;
-
-  transform: none;
-
-  z-index: 50;
-
-  color: #747d84;
-
-  font-size: 14px;
-  font-weight: 600;
-
-  letter-spacing: .15em;
-
-  text-align: left;
-
-  white-space: nowrap;
-}
-
-
-/* =========================================
-   左下：次のチャイム
-========================================= */
-
-.next-event {
-  position: fixed;
-
-  left: 30px;
-  bottom: 52px;
-
-  transform: none;
-
-  z-index: 50;
-
-  color: #50585f;
-
-  font-size: 13px;
-  font-weight: 400;
-
-  text-align: left;
-
-  white-space: nowrap;
-}
-
-
-/* =========================================
-   左下：ステータス
-========================================= */
-
-.status {
+.bottom-left-info {
   position: fixed;
 
   left: 30px;
   bottom: 25px;
 
-  transform: none;
+  z-index: 100;
 
-  z-index: 50;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  width: auto;
+
+  max-width: 45vw;
+
+  text-align: left;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   Aタイム
+========================================= */
+
+.bottom-left-info .current-mode {
+  position: static;
+
+  color: #747d84;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  letter-spacing: .15em;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   次のチャイム
+========================================= */
+
+.bottom-left-info .next-event {
+  position: static;
+
+  color: #50585f;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   ステータス
+========================================= */
+
+.bottom-left-info .status {
+  position: static;
 
   max-width: 45vw;
 
@@ -520,8 +551,62 @@ body {
   color: #8a9299;
 
   font-size: 11px;
+}
 
-  text-align: left;
+
+/* =========================================
+   設定ボタン
+========================================= */
+
+.settings-button {
+  position: fixed;
+
+  right: 25px;
+  bottom: 20px;
+
+  z-index: 100;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border:
+    1px solid #dce1e5;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #444c53;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px
+      rgba(0, 0, 0, .11);
+
+  transition:
+    background .2s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+
+.settings-button:hover {
+  background: #f5f6f7;
+
+  transform:
+    rotate(25deg);
+
+  box-shadow:
+    0 8px 22px
+      rgba(0, 0, 0, .14);
 }
 
 
@@ -532,7 +617,7 @@ body {
 
 
 /* =========================================
-   設定モーダル
+   モーダル
 ========================================= */
 
 .modal {
@@ -540,7 +625,7 @@ body {
 
   inset: 0;
 
-  z-index: 100;
+  z-index: 1000;
 
   display: none;
 
@@ -641,9 +726,6 @@ body {
   line-height: 1;
 
   cursor: pointer;
-
-  transition:
-    background .2s ease;
 }
 
 
@@ -686,7 +768,7 @@ body {
 
 
 /* =========================================
-   試聴ボタン
+   ボタン
 ========================================= */
 
 .primary-button {
@@ -708,10 +790,6 @@ body {
   font-weight: 600;
 
   cursor: pointer;
-
-  transition:
-    background .2s ease,
-    transform .1s ease;
 }
 
 
@@ -720,14 +798,8 @@ body {
 }
 
 
-.primary-button:active {
-  transform:
-    scale(.97);
-}
-
-
 /* =========================================
-   時刻表
+   テーブル
 ========================================= */
 
 .table-wrapper {
@@ -854,18 +926,8 @@ button:focus-visible {
 
 @media (max-width: 600px) {
 
-  /* -----------------------------------------
-     アプリ
-  ----------------------------------------- */
 
-  .app {
-    min-height: 100vh;
-  }
-
-
-  /* -----------------------------------------
-     タイトル
-  ----------------------------------------- */
+  /* タイトル */
 
   .app-title {
     top: 14px;
@@ -877,9 +939,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     A / B切り替え
-  ----------------------------------------- */
+  /* A / B */
 
   .mode-switch {
     top: 10px;
@@ -899,9 +959,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     デジタル時計
-  ----------------------------------------- */
+  /* デジタル時計 */
 
   .digital-clock {
     top: 62px;
@@ -913,9 +971,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     アナログ時計
-  ----------------------------------------- */
+  /* アナログ時計 */
 
   .clock-wrapper {
     top: 51%;
@@ -928,75 +984,83 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     時計数字
-  ----------------------------------------- */
+  /* 数字 */
 
   .clock-number {
     width: 36px;
     height: 36px;
 
+    font-family:
+      "Noto Serif JP",
+      "BIZ UDP明朝",
+      "Yu Mincho",
+      "YuMincho",
+      "Hiragino Mincho ProN",
+      "Hiragino Mincho Pro",
+      "MS PMincho",
+      serif;
+
     font-size:
       clamp(16px, 5vw, 24px);
+
+    font-weight: 500;
+
+    font-style: normal;
+
+    font-variant:
+      normal;
+
+    font-variant-numeric:
+      normal;
+
+    font-feature-settings:
+      normal;
+
+    font-synthesis:
+      none;
   }
 
 
-  /* -----------------------------------------
-     秒針
-  ----------------------------------------- */
+  /* 左下 */
 
-  .second-hand {
-    width: 2px;
-  }
+  .bottom-left-info {
+    position: fixed;
 
-
-  /* -----------------------------------------
-     左下：Aタイム
-  ----------------------------------------- */
-
-  .current-mode {
     left: 15px;
-    bottom: 72px;
+    bottom: 20px;
 
+    max-width: 65vw;
+
+    gap: 5px;
+  }
+
+
+  .bottom-left-info .current-mode {
     font-size: 12px;
   }
 
 
-  /* -----------------------------------------
-     左下：次の時報
-  ----------------------------------------- */
-
-  .next-event {
-    left: 15px;
-    bottom: 47px;
-
-    max-width: 62vw;
+  .bottom-left-info .next-event {
+    max-width: 65vw;
 
     overflow: hidden;
 
     text-overflow: ellipsis;
 
+    white-space: nowrap;
+
     font-size: 11px;
   }
 
 
-  /* -----------------------------------------
-     左下：ステータス
-  ----------------------------------------- */
-
-  .status {
-    left: 15px;
-    bottom: 20px;
-
-    max-width: 62vw;
+  .bottom-left-info .status {
+    max-width: 65vw;
 
     font-size: 10px;
   }
 
 
-  /* -----------------------------------------
-     右下：設定
-  ----------------------------------------- */
+  /* 設定 */
 
   .settings-button {
     right: 15px;
@@ -1009,9 +1073,7 @@ button:focus-visible {
   }
 
 
-  /* -----------------------------------------
-     モーダル
-  ----------------------------------------- */
+  /* モーダル */
 
   .modal {
     padding: 10px;
@@ -1034,14 +1096,7 @@ button:focus-visible {
   }
 
 
-  .settings-section {
-    margin-top: 20px;
-  }
-
-
-  /* -----------------------------------------
-     テーブル
-  ----------------------------------------- */
+  /* テーブル */
 
   th,
   td {
@@ -1081,23 +1136,23 @@ button:focus-visible {
   }
 
 
-  .current-mode {
-    bottom: 69px;
+  .bottom-left-info {
+    left: 12px;
+    bottom: 18px;
+  }
 
+
+  .bottom-left-info .current-mode {
     font-size: 11px;
   }
 
 
-  .next-event {
-    bottom: 45px;
-
+  .bottom-left-info .next-event {
     font-size: 10px;
   }
 
 
-  .status {
-    bottom: 19px;
-
+  .bottom-left-info .status {
     font-size: 9px;
   }
 
@@ -1153,18 +1208,9 @@ button:focus-visible {
   }
 
 
-  .current-mode {
-    bottom: 65px;
-  }
-
-
-  .next-event {
-    bottom: 40px;
-  }
-
-
-  .status {
-    bottom: 17px;
+  .bottom-left-info {
+    left: 25px;
+    bottom: 18px;
   }
 
 }
