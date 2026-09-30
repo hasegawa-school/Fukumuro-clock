@@ -2,6 +2,7 @@
 <html lang="ja">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -20,12 +21,14 @@
     rel="stylesheet"
     href="./style.css"
   >
+
 </head>
 
 
 <body>
 
   <main class="app">
+
 
     <!-- =========================
          左上：タイトル
@@ -86,6 +89,7 @@
       >
 
         <!-- 目盛り -->
+
         <div
           id="clockTicks"
           class="clock-ticks"
@@ -93,6 +97,7 @@
 
 
         <!-- 数字 -->
+
         <div
           id="clockNumbers"
           class="clock-numbers"
@@ -100,6 +105,7 @@
 
 
         <!-- 時針 -->
+
         <div
           id="hourHand"
           class="clock-hand hour-hand"
@@ -107,6 +113,7 @@
 
 
         <!-- 分針 -->
+
         <div
           id="minuteHand"
           class="clock-hand minute-hand"
@@ -114,6 +121,7 @@
 
 
         <!-- 秒針 -->
+
         <div
           id="secondHand"
           class="clock-hand second-hand"
@@ -121,6 +129,7 @@
 
 
         <!-- 中央 -->
+
         <div class="clock-center"></div>
 
       </div>
@@ -129,38 +138,42 @@
 
 
     <!-- =========================
-         現在のモード
+         左下：時報情報
     ========================== -->
 
-    <div
-      id="currentMode"
-      class="current-mode"
-    >
-      Aタイム
-    </div>
+    <div class="bottom-left-info">
 
 
-    <!-- =========================
-         次の時報
-    ========================== -->
+      <!-- 現在のモード -->
 
-    <div
-      id="nextEvent"
-      class="next-event"
-    >
-      次の時報：--
-    </div>
+      <div
+        id="currentMode"
+        class="current-mode"
+      >
+        Aタイム
+      </div>
 
 
-    <!-- =========================
-         ステータス
-    ========================== -->
+      <!-- 次の時報 -->
 
-    <div
-      id="status"
-      class="status"
-    >
-      準備中...
+      <div
+        id="nextEvent"
+        class="next-event"
+      >
+        次の時報：--
+      </div>
+
+
+      <!-- ステータス -->
+
+      <div
+        id="status"
+        class="status"
+      >
+        準備中...
+      </div>
+
+
     </div>
 
 
@@ -193,6 +206,9 @@
 
     <div class="modal-panel">
 
+
+      <!-- モーダルヘッダー -->
+
       <div class="modal-header">
 
         <h2>
@@ -210,7 +226,9 @@
       </div>
 
 
-      <!-- 音声テスト -->
+      <!-- =========================
+           音声テスト
+      ========================== -->
 
       <section class="settings-section">
 
@@ -233,7 +251,9 @@
       </section>
 
 
-      <!-- 時刻表 -->
+      <!-- =========================
+           時刻表
+      ========================== -->
 
       <section class="settings-section">
 
@@ -267,7 +287,9 @@
       </section>
 
 
-      <!-- 操作説明 -->
+      <!-- =========================
+           操作説明
+      ========================== -->
 
       <section class="settings-section">
 
@@ -287,12 +309,15 @@
 
       </section>
 
+
     </div>
 
   </div>
 
 
-  <!-- 音声 -->
+  <!-- =========================
+       音声
+  ========================== -->
 
   <audio
     id="audioPlayer"
