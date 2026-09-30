@@ -28,53 +28,116 @@
 const SCHEDULE = [
 
   {
-    aTime: "15:16:00",
-    bTime: "08:30:00",
-    memo: "始業",
+    aTime: "08:25:00",
+    bTime: "08:25:00",
+    memo: "朝の会",
     audio: "./audio/chime01.mp3"
   },
 
   {
-    aTime: "09:00:00",
-    bTime: "09:30:00",
-    memo: "時報",
-    audio: "./audio/chime02.mp3"
+    aTime: "08:45:00",
+    bTime: "08:45:00",
+    memo: "1時間目開始",
+    audio: "./audio/chime01.mp3"
   },
 
   {
-    aTime: "10:00:00",
+    aTime: "09:30:00",
     bTime: "10:30:00",
-    memo: "時報",
-    audio: "./audio/chime03.mp3"
+    memo: "1時間目終了",
+    audio: "./audio/chime01.mp3"
+  },
+
+{
+    aTime: "09:35:00",
+    bTime: "08:45:00",
+    memo: "2時間目開始",
+    audio: "./audio/chime01.mp3"
   },
 
   {
-    aTime: "12:00:00",
-    bTime: "12:00:00",
-    memo: "昼休み",
-    audio: "./audio/chime04.mp3"
+    aTime: "10:20:00",
+    bTime: "10:30:00",
+    memo: "2時間目終了",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "10:40:00",
+    bTime: "08:45:00",
+    memo: "3時間目開始",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "11:25:00",
+    bTime: "10:30:00",
+    memo: "3時間目終了",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "11:30:00",
+    bTime: "08:45:00",
+    memo: "4時間目開始",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "12:15:00",
+    bTime: "10:30:00",
+    memo: "4時間目終了",
+    audio: "./audio/chime01.mp3"
   },
 
   {
     aTime: "13:00:00",
-    bTime: "13:30:00",
-    memo: "時報",
-    audio: "./audio/chime05.mp3"
+    bTime: "08:45:00",
+    memo: "給食終了",
+    audio: "./audio/chime01.mp3"
   },
 
   {
-    aTime: "15:00:00",
-    bTime: "15:30:00",
-    memo: "時報",
-    audio: "./audio/chime06.mp3"
+    aTime: "13:20:00",
+    bTime: "10:30:00",
+    memo: "昼休み開始",
+    audio: "./audio/chime01.mp3"
   },
 
   {
-    aTime: "17:00:00",
-    bTime: "17:30:00",
-    memo: "終業",
-    audio: "./audio/chime07.mp3"
-  }
+    aTime: "13:40:00",
+    bTime: "08:45:00",
+    memo: "5時間目開始",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "14:25:00",
+    bTime: "10:30:00",
+    memo: "5時間目終了",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "14:30:00",
+    bTime: "08:45:00",
+    memo: "6時間目開始",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "15:15:00",
+    bTime: "10:30:00",
+    memo: "6時間目終了",
+    audio: "./audio/chime01.mp3"
+  },
+
+  {
+    aTime: "16:55:00",
+    bTime: "10:30:00",
+    memo: "終業時刻",
+    audio: "./audio/chime01.mp3"
+  },
 
 ];
 
