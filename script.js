@@ -653,7 +653,7 @@ function checkSchedule(now) {
 
 
       const key =
-        `currentMode-{index}-${time}`;
+        `${currentMode}-${index}-${time}`;
 
 
       /*
