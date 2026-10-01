@@ -289,8 +289,6 @@ function initialize() {
 
   updateClock();
 
-
-   
   /*
    * ブラウザの音声再生許可を取得するため、
    * 最初のクリック時に音声を初期化する。
@@ -545,7 +543,7 @@ function updateClock() {
    */
 
   digitalClock.textContent =
-    `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    `pad(hours):{pad(minutes)}:${pad(seconds)}`;
 
 
   /*
@@ -655,7 +653,7 @@ function checkSchedule(now) {
 
 
       const key =
-        `${currentMode}-${index}-${time}`;
+        `currentMode-{index}-${time}`;
 
 
       /*
