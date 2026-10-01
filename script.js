@@ -289,6 +289,69 @@ function initialize() {
 
   updateClock();
 
+  /* =========================================
+   DOM（追加分）
+========================================= */
+const startOverlay = document.getElementById("startOverlay");
+const startButton = document.getElementById("startButton");
+
+/* =========================================
+   初期化
+========================================= */
+document.addEventListener("DOMContentLoaded", initialize);
+
+function initialize() {
+  createClockFace();
+  renderSchedule();
+  updateModeUI();
+  updateNextEvent();
+  updateClock();
+
+  // 音声再生が終わったらステータスを元に戻す設定
+  audioPlayer.addEventListener("ended", () => {
+    setStatus("チャイム再生準備完了");
+  });
+
+  // 「始める」ボタンで音声をアンロックして画面を開く
+  if (startButton) {
+    startButton.addEventListener("click", () => {
+      unlockAudio();
+      if (startOverlay) {
+        startOverlay.classList.add("hidden");
+      }
+    });
+  }
+
+  /*
+   * 画面の任意の場所をクリックした際にもバックアップとしてアンロック
+   */
+  document.addEventListener("click", unlockAudio, { once: true });
+}
+
+/* =========================================
+   音声ロック解除（ステータスメッセージの調整）
+========================================= */
+function unlockAudio() {
+  const audio = document.createElement("audio");
+  audio.src = "./audio/chime01.mp3";
+  audio.volume = 0;
+  const promise = audio.play();
+  
+  if (promise) {
+    promise
+      .then(() => {
+        audio.pause();
+        audio.currentTime = 0;
+        audioUnlocked = true;
+        setStatus("チャイム再生準備完了");
+      })
+      .catch(() => {
+        audioUnlocked = false;
+        setStatus("画面をクリックすると音声を使用できます");
+      });
+  }
+}
+   
   /*
    * ブラウザの音声再生許可を取得するため、
    * 最初のクリック時に音声を初期化する。
