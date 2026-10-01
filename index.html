@@ -314,19 +314,26 @@
 
   </div>
 
+  <!-- ==================================
+       スタートモーダル（音声再生の許可）
+  =================================== -->
+  <div id="startOverlay" class="start-overlay">
+    <div class="start-card">
+      <h2>ふくむろ時計</h2>
+      <p>時報の音声を再生するために「始める」ボタンを押してください。</p>
+      <button id="startButton" class="start-button" type="button">
+        始める
+      </button>
+    </div>
+  </div>
 
   <!-- =========================
        音声
   ========================== -->
-
   <audio
     id="audioPlayer"
     preload="auto"
   ></audio>
-
-
   <script src="./script.js"></script>
-
 </body>
-
 </html>
