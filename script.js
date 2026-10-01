@@ -543,7 +543,7 @@ function updateClock() {
    */
 
   digitalClock.textContent =
-    `pad(hours):{pad(minutes)}:${pad(seconds)}`;
+  `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
 
 
   /*
